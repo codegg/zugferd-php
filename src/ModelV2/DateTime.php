@@ -20,6 +20,12 @@ class DateTime
     private $time;
 
     /**
+     * @var \DateTime
+     * @JMS\Exclude
+     */
+    private $dateTime;
+
+    /**
      * DateTime constructor.
      *
      * @param \DateTime|string $time
@@ -55,6 +61,7 @@ class DateTime
 
         $this->time = $dateTime->format($formatStr);
         $this->format = $format;
+        $this->dateTime = $dateTime;
     }
 
     /**
@@ -71,5 +78,10 @@ class DateTime
     public function getTime()
     {
         return $this->time;
+    }
+
+    public function getDateTime()
+    {
+        return $this->dateTime;
     }
 }

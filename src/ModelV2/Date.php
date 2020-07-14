@@ -42,4 +42,12 @@ class Date
     {
         return $this->date->getFormat();
     }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateTime()
+    {
+        return $this->date->getDateTime();
+    }
 }
