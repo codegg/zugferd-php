@@ -2,12 +2,10 @@
 
 namespace Easybill\ZUGFeRD\ModelV2\Trade;
 
-use Easybill\ZUGFeRD\ModelV2\Date;
 use JMS\Serializer\Annotation as JMS;
 
 class ProcuringProject
 {
-
     /**
      * @var string
      * @JMS\Type("string")
@@ -24,16 +22,10 @@ class ProcuringProject
      */
     private $name;
 
-
-
-
     /**
      * ReferencedDocument constructor.
-     *
-          */
+     */
     public function __construct()
     {
-
     }
-
 }

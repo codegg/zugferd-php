@@ -1,8 +1,9 @@
-<?php namespace Easybill\ZUGFeRD\ModelV2;
+<?php
+
+namespace Easybill\ZUGFeRD\ModelV2;
 
 class UnitCode
 {
-
     // area units
     const HECTARE = 'HAR';
     const METER = 'MTR';

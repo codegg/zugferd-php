@@ -1,14 +1,15 @@
-<?php namespace Easybill\ZUGFeRD\ModelV2\Trade;
+<?php
+
+namespace Easybill\ZUGFeRD\ModelV2\Trade;
 
 use JMS\Serializer\Annotation\SerializedName;
+use JMS\Serializer\Annotation\SkipWhenEmpty;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
-use JMS\Serializer\Annotation\SkipWhenEmpty;
 
 class PaymentMeans
 {
     /**
-     *
      * @var string
      * @Type("string")
      * @XmlElement(cdata = false, namespace = "urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
@@ -17,17 +18,15 @@ class PaymentMeans
     private $code = '';
 
     /**
-     *
      * @var string
      * @Type("string")
      * @SkipWhenEmpty
      * @XmlElement(cdata = false, namespace = "urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
      * @SerializedName("Information")
      */
-    private $information ;
+    private $information;
 
     /**
-     *
      * @var CreditorFinancialAccount
      * @Type("Easybill\ZUGFeRD\ModelV2\Trade\CreditorFinancialAccount")
      * @XmlElement(cdata = false, namespace = "urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
@@ -35,9 +34,7 @@ class PaymentMeans
      */
     private $payeeAccount;
 
-
     /**
-     *
      * @var CreditorFinancialInstitution
      * @Type("Easybill\ZUGFeRD\ModelV2\Trade\CreditorFinancialInstitution")
      * @XmlElement(cdata = false, namespace = "urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
@@ -61,6 +58,7 @@ class PaymentMeans
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
@@ -80,6 +78,7 @@ class PaymentMeans
     public function setInformation($information)
     {
         $this->information = $information;
+
         return $this;
     }
 
@@ -92,13 +91,12 @@ class PaymentMeans
     }
 
     /**
-     * @param CreditorFinancialAccount $payeeAccount
-     *
      * @return self
      */
     public function setPayeeAccount(CreditorFinancialAccount $payeeAccount)
     {
         $this->payeeAccount = $payeeAccount;
+
         return $this;
     }
 
@@ -118,8 +116,7 @@ class PaymentMeans
     public function setPayeeInstitution($payeeInstitution)
     {
         $this->payeeInstitution = $payeeInstitution;
+
         return $this;
     }
-
-
 }

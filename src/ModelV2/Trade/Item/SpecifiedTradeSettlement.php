@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\ModelV2\Trade\Item;
+<?php
+
+namespace Easybill\ZUGFeRD\ModelV2\Trade\Item;
 
 use Easybill\ZUGFeRD\ModelV2\Trade\Tax\TradeTax;
 use JMS\Serializer\Annotation\SerializedName;
@@ -7,7 +9,6 @@ use JMS\Serializer\Annotation\XmlElement;
 
 class SpecifiedTradeSettlement
 {
-
     /**
      * @var TradeTax
      * @Type("Easybill\ZUGFeRD\ModelV2\Trade\Tax\TradeTax")
@@ -40,6 +41,7 @@ class SpecifiedTradeSettlement
     public function setTradeTax($tradeTax)
     {
         $this->tradeTax = $tradeTax;
+
         return $this;
     }
 
@@ -59,7 +61,7 @@ class SpecifiedTradeSettlement
     public function setMonetarySummation($monetarySummation)
     {
         $this->monetarySummation = $monetarySummation;
+
         return $this;
     }
-
 }

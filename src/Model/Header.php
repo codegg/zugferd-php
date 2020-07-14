@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\Model;
+<?php
+
+namespace Easybill\ZUGFeRD\Model;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
@@ -44,7 +46,7 @@ class Header
      * @Type("array<Easybill\ZUGFeRD\Model\Note>")
      * @XmlList(inline = true, entry = "IncludedNote", namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:12")
      */
-    private $notes = array();
+    private $notes = [];
 
     /**
      * @return string
@@ -61,7 +63,8 @@ class Header
      */
     public function setId($id)
     {
-        $this->id = (string)$id;
+        $this->id = (string) $id;
+
         return $this;
     }
 
@@ -80,7 +83,8 @@ class Header
      */
     public function setName($name)
     {
-        $this->name = (string)$name;
+        $this->name = (string) $name;
+
         return $this;
     }
 
@@ -99,19 +103,18 @@ class Header
      */
     public function setTypeCode($typeCode)
     {
-        $this->typeCode = (string)$typeCode;
+        $this->typeCode = (string) $typeCode;
+
         return $this;
     }
 
-
     /**
-     * @param Note $note
-     *
      * @return self
      */
     public function addNote(Note $note)
     {
         $this->notes[] = $note;
+
         return $this;
     }
 
@@ -132,8 +135,6 @@ class Header
     }
 
     /**
-     * @param Date $date
-     *
      * @return self
      */
     public function setDate(Date $date)
@@ -142,5 +143,4 @@ class Header
 
         return $this;
     }
-
 }

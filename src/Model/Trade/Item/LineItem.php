@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\Model\Trade\Item;
+<?php
+
+namespace Easybill\ZUGFeRD\Model\Trade\Item;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
@@ -6,7 +8,6 @@ use JMS\Serializer\Annotation\XmlElement;
 
 class LineItem
 {
-
     /**
      * @var LineDocument
      * @Type("Easybill\ZUGFeRD\Model\Trade\Item\LineDocument")
@@ -63,6 +64,7 @@ class LineItem
     public function setLineDocument(LineDocument $lineDocument)
     {
         $this->lineDocument = $lineDocument;
+
         return $this;
     }
 
@@ -82,6 +84,7 @@ class LineItem
     public function setTradeAgreement($tradeAgreement)
     {
         $this->tradeAgreement = $tradeAgreement;
+
         return $this;
     }
 
@@ -101,6 +104,7 @@ class LineItem
     public function setDelivery($delivery)
     {
         $this->delivery = $delivery;
+
         return $this;
     }
 
@@ -120,6 +124,7 @@ class LineItem
     public function setSettlement($settlement)
     {
         $this->settlement = $settlement;
+
         return $this;
     }
 
@@ -139,7 +144,7 @@ class LineItem
     public function setProduct(Product $product)
     {
         $this->product = $product;
+
         return $this;
     }
-
 }

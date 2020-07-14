@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\ModelV2\Trade\Item;
+<?php
+
+namespace Easybill\ZUGFeRD\ModelV2\Trade\Item;
 
 use Easybill\ZUGFeRD\ModelV2\Trade\Amount;
 use JMS\Serializer\Annotation\SerializedName;
@@ -7,7 +9,6 @@ use JMS\Serializer\Annotation\XmlElement;
 
 class SpecifiedTradeMonetarySummation
 {
-
     /**
      * @var Amount
      * @Type("Easybill\ZUGFeRD\ModelV2\Trade\Amount")
@@ -19,7 +20,7 @@ class SpecifiedTradeMonetarySummation
     /**
      * SpecifiedMonetarySummation constructor.
      *
-     * @param double $value
+     * @param float  $value
      * @param string $currency
      */
     public function __construct($value, $currency = 'EUR')
@@ -42,6 +43,4 @@ class SpecifiedTradeMonetarySummation
     {
         $this->totalAmount = $totalAmount;
     }
-
-
 }

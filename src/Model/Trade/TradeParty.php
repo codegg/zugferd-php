@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\Model\Trade;
+<?php
+
+namespace Easybill\ZUGFeRD\Model\Trade;
 
 use Easybill\ZUGFeRD\Model\Address;
 use Easybill\ZUGFeRD\Model\Trade\Tax\TaxRegistration;
@@ -55,7 +57,7 @@ class TradeParty
      */
     private $taxRegistrations;
 
-    public function __construct($name = '', Address $address, array $taxRegistrations = array())
+    public function __construct($name = '', Address $address, array $taxRegistrations = [])
     {
         $this->name = $name;
         $this->address = $address;
@@ -78,13 +80,15 @@ class TradeParty
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getGlobalID() {
+    public function getGlobalID()
+    {
         return $this->global_id;
     }
 
@@ -93,8 +97,10 @@ class TradeParty
      *
      * @return self
      */
-    public function setGlobalID($global_id) {
+    public function setGlobalID($global_id)
+    {
         $this->global_id = $global_id;
+
         return $this;
     }
 
@@ -107,13 +113,12 @@ class TradeParty
     }
 
     /**
-     * @param \Easybill\ZUGFeRD\Model\Address $address
-     *
      * @return self
      */
     public function setAddress(Address $address)
     {
         $this->address = $address;
+
         return $this;
     }
 
@@ -126,15 +131,12 @@ class TradeParty
     }
 
     /**
-     * @param \Easybill\ZUGFeRD\Model\Trade\Tax\TaxRegistration $taxRegistration
-     *
      * @return self
      */
     public function addTaxRegistration(TaxRegistration $taxRegistration)
     {
         $this->taxRegistrations[] = $taxRegistration;
+
         return $this;
     }
-
-
 }

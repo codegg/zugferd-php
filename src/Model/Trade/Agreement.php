@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\Model\Trade;
+<?php
+
+namespace Easybill\ZUGFeRD\Model\Trade;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
@@ -6,7 +8,6 @@ use JMS\Serializer\Annotation\XmlElement;
 
 class Agreement
 {
-
     /**
      * @var string
      * @Type("string")
@@ -47,6 +48,7 @@ class Agreement
     public function setBuyerReference($buyerReference)
     {
         $this->buyerReference = $buyerReference;
+
         return $this;
     }
 
@@ -66,6 +68,7 @@ class Agreement
     public function setSeller($seller)
     {
         $this->seller = $seller;
+
         return $this;
     }
 
@@ -85,8 +88,7 @@ class Agreement
     public function setBuyer($buyer)
     {
         $this->buyer = $buyer;
+
         return $this;
     }
-
-
 }

@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\ModelV2\Trade\Tax;
+<?php
+
+namespace Easybill\ZUGFeRD\ModelV2\Trade\Tax;
 
 use Easybill\ZUGFeRD\ModelV2\Trade\Amount;
 use JMS\Serializer\Annotation as JMS;
@@ -30,7 +32,7 @@ class TradeTax
      * @JMS\XmlElement(cdata = false, namespace = "urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
      * @JMS\SerializedName("ExemptionReason")
      */
-    private $exemptionReason ;
+    private $exemptionReason;
 
     /**
      * @var Amount
@@ -56,8 +58,6 @@ class TradeTax
      */
     private $percent;
 
-
-
     /**
      * @return Amount
      */
@@ -68,11 +68,13 @@ class TradeTax
 
     /**
      * @param Amount $calculatedAmount
+     *
      * @return self
      */
     public function setCalculatedAmount($calculatedAmount)
     {
         $this->calculatedAmount = $calculatedAmount;
+
         return $this;
     }
 
@@ -86,13 +88,16 @@ class TradeTax
 
     /**
      * @param string $code
+     *
      * @return self
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
+
     /**
      * @return string
      */
@@ -103,16 +108,18 @@ class TradeTax
 
     /**
      * @param $exemptionReason
+     *
      * @return self
      */
     public function setExemptionReason($exemptionReason)
     {
         $this->exemptionReason = $exemptionReason;
+
         return $this;
     }
 
     /**
-     * @return null|Amount
+     * @return Amount|null
      */
     public function getBasisAmount()
     {
@@ -141,6 +148,7 @@ class TradeTax
 
     /**
      * @param string $percent
+     *
      * @return self
      */
     public function setPercent($percent)
@@ -160,12 +168,13 @@ class TradeTax
 
     /**
      * @param string $category
+     *
      * @return self
      */
     public function setCategory($category)
     {
         $this->category = $category;
+
         return $this;
     }
-
 }

@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\Model\Trade;
+<?php
+
+namespace Easybill\ZUGFeRD\Model\Trade;
 
 use Easybill\ZUGFeRD\Model\Date;
 use JMS\Serializer\Annotation\SerializedName;
@@ -7,7 +9,6 @@ use JMS\Serializer\Annotation\XmlElement;
 
 class DeliveryChainEvent
 {
-
     /**
      * @var Date
      * @Type("Easybill\ZUGFeRD\Model\Date")
@@ -20,13 +21,12 @@ class DeliveryChainEvent
      * ChainEvent constructor.
      *
      * @param string $date
-     * @param int $format
+     * @param int    $format
      */
     public function __construct($date = '', $format)
     {
         $this->date = new Date($date, $format);
     }
-
 
     /**
      * @return \Easybill\ZUGFeRD\Model\Date

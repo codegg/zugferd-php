@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\ModelV2;
+<?php
+
+namespace Easybill\ZUGFeRD\ModelV2;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
@@ -6,7 +8,6 @@ use JMS\Serializer\Annotation\XmlElement;
 
 class Date
 {
-
     /**
      * @var DateTime
      * @Type("Easybill\ZUGFeRD\ModelV2\DateTime")
@@ -37,8 +38,8 @@ class Date
     /**
      * @return int
      */
-    public function getFormat() {
+    public function getFormat()
+    {
         return $this->date->getFormat();
     }
-
 }

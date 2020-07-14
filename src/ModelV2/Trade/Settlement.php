@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\ModelV2\Trade;
+<?php
+
+namespace Easybill\ZUGFeRD\ModelV2\Trade;
 
 use Easybill\ZUGFeRD\ModelV2\AllowanceCharge;
 use Easybill\ZUGFeRD\ModelV2\Trade\Tax\TradeTax;
@@ -13,7 +15,6 @@ use JMS\Serializer\Annotation\XmlList;
  */
 class Settlement
 {
-
     /**
      * @var string
      * @Type("string")
@@ -51,7 +52,7 @@ class Settlement
      * @XmlList(inline = true, entry = "SpecifiedTradeAllowanceCharge", namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
      */
     private $allowanceCharges = [];
-    
+
     /**
      * @var BillingPeriod
      * @Type("Easybill\ZUGFeRD\ModelV2\Trade\BillingPeriod")
@@ -107,11 +108,13 @@ class Settlement
 
     /**
      * @param string $paymentReference
+     *
      * @return self
      */
     public function setPaymentReference($paymentReference)
     {
         $this->paymentReference = $paymentReference;
+
         return $this;
     }
 
@@ -125,11 +128,13 @@ class Settlement
 
     /**
      * @param string $currency
+     *
      * @return self
      */
     public function setCurrency($currency)
     {
         $this->currency = $currency;
+
         return $this;
     }
 
@@ -142,12 +147,12 @@ class Settlement
     }
 
     /**
-     * @param PaymentMeans $paymentMeans
      * @return self
      */
     public function setPaymentMeans(PaymentMeans $paymentMeans)
     {
         $this->paymentMeans = $paymentMeans;
+
         return $this;
     }
 
@@ -160,13 +165,12 @@ class Settlement
     }
 
     /**
-     * @param TradeTax $tradeTax
-     *
      * @return self
      */
     public function addTradeTax(TradeTax $tradeTax)
     {
         $this->tradeTaxes[] = $tradeTax;
+
         return $this;
     }
 
@@ -179,12 +183,12 @@ class Settlement
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
      * @return self
      */
     public function addAllowanceCharge(AllowanceCharge $allowanceCharge)
     {
         $this->allowanceCharges[] = $allowanceCharge;
+
         return $this;
     }
 
@@ -198,11 +202,13 @@ class Settlement
 
     /**
      * @param MonetarySummation $monetarySummation
+     *
      * @return self
      */
     public function setMonetarySummation($monetarySummation)
     {
         $this->monetarySummation = $monetarySummation;
+
         return $this;
     }
 
@@ -216,11 +222,13 @@ class Settlement
 
     /**
      * @param PaymentTerms $paymentTerms
+     *
      * @return self
      */
     public function setPaymentTerms($paymentTerms)
     {
         $this->paymentTerms = $paymentTerms;
+
         return $this;
     }
 
@@ -234,12 +242,13 @@ class Settlement
 
     /**
      * @param BillingPeriod $billingPeriod
+     *
      * @return self
      */
     public function setBillingPeriod($billingPeriod)
     {
         $this->billingPeriod = $billingPeriod;
+
         return $this;
     }
-
 }

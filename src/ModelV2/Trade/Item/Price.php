@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\ModelV2\Trade\Item;
+<?php
+
+namespace Easybill\ZUGFeRD\ModelV2\Trade\Item;
 
 use Easybill\ZUGFeRD\ModelV2\AllowanceCharge;
 use Easybill\ZUGFeRD\ModelV2\Trade\Amount;
@@ -6,7 +8,6 @@ use JMS\Serializer\Annotation as JMS;
 
 class Price
 {
-
     /**
      * @var Amount
      * @JMS\Type("Easybill\ZUGFeRD\ModelV2\Trade\Amount")
@@ -20,12 +21,12 @@ class Price
      * @JMS\Type("array<Easybill\ZUGFeRD\ModelV2\AllowanceCharge>")
      * @JMS\XmlList(inline = true, entry = "AppliedTradeAllowanceCharge", namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
      */
-    private $allowanceCharges = array();
+    private $allowanceCharges = [];
 
     /**
      * GrossPrice constructor.
      *
-     * @param double $value
+     * @param float  $value
      * @param string $currency
      * @param bool   $isSum
      */
@@ -59,15 +60,12 @@ class Price
     }
 
     /**
-     * @param \Easybill\ZUGFeRD\ModelV2\AllowanceCharge $allowanceCharge
-     *
      * @return self
      */
     public function addAllowanceCharge(AllowanceCharge $allowanceCharge)
     {
         $this->allowanceCharges[] = $allowanceCharge;
+
         return $this;
     }
-
-
 }

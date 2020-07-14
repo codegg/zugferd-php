@@ -1,5 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\ModelV2\Trade;
+<?php
 
+namespace Easybill\ZUGFeRD\ModelV2\Trade;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
@@ -8,13 +9,12 @@ use JMS\Serializer\Annotation\XmlList;
 
 class Trade
 {
-
     /**
      * @var Trade/LineItem[]
      * @Type("array<Easybill\ZUGFeRD\ModelV2\Trade\Item\LineItem>")
      * @XmlList(inline = true, entry = "IncludedSupplyChainTradeLineItem", namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
      */
-    private $lineItems = array();
+    private $lineItems = [];
 
     /**
      * @var Trade/Agreement
@@ -40,9 +40,6 @@ class Trade
      */
     private $settlement;
 
-
-
-
     public function __construct()
     {
         $this->agreement = new Agreement();
@@ -59,13 +56,12 @@ class Trade
     }
 
     /**
-     * @param Agreement $agreement
-     *
      * @return self
      */
     public function setAgreement(Agreement $agreement)
     {
         $this->agreement = $agreement;
+
         return $this;
     }
 
@@ -85,6 +81,7 @@ class Trade
     public function setDelivery($delivery)
     {
         $this->delivery = $delivery;
+
         return $this;
     }
 
@@ -104,6 +101,7 @@ class Trade
     public function setSettlement($settlement)
     {
         $this->settlement = $settlement;
+
         return $this;
     }
 
@@ -123,7 +121,7 @@ class Trade
     public function addLineItem(Item\LineItem $lineItem)
     {
         $this->lineItems[] = $lineItem;
+
         return $this;
     }
-
 }

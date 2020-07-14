@@ -1,15 +1,16 @@
-<?php namespace Easybill\ZUGFeRD\ModelV2;
+<?php
+
+namespace Easybill\ZUGFeRD\ModelV2;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
 
 /**
- * Class ContextParameterID
+ * Class ContextParameterID.
  */
 class ContextParameterID
 {
-
     /**
      * @Type("string")
      * @XmlElement(cdata=false,namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")

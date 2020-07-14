@@ -1,13 +1,13 @@
-<?php namespace Easybill\ZUGFeRD\Model\Trade\Item;
+<?php
+
+namespace Easybill\ZUGFeRD\Model\Trade\Item;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
 
 /**
- * Class Product
- *
- * @package Easybill\ZUGFeRD\Model\Trade\Item
+ * Class Product.
  */
 class Product
 {
@@ -50,7 +50,7 @@ class Product
      * @param string $name
      * @param string $buyerAssignedID
      */
-    public function __construct($sellerAssignedID, $name ,$buyerAssignedID = null)
+    public function __construct($sellerAssignedID, $name, $buyerAssignedID = null)
     {
         $this->sellerAssignedID = $sellerAssignedID;
         $this->name = $name;

@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\ModelV2;
+<?php
+
+namespace Easybill\ZUGFeRD\ModelV2;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
@@ -14,7 +16,6 @@ class Document
      * @SerializedName("ID")
      */
     private $id = '';
-
 
     /**
      * @var string
@@ -37,7 +38,7 @@ class Document
      * @Type("array<Easybill\ZUGFeRD\ModelV2\Note>")
      * @XmlList(inline = true, entry = "IncludedNote", namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
      */
-    private $notes = array();
+    private $notes = [];
 
     /**
      * @return string
@@ -54,10 +55,10 @@ class Document
      */
     public function setId($id)
     {
-        $this->id = (string)$id;
+        $this->id = (string) $id;
+
         return $this;
     }
-
 
     /**
      * @return string
@@ -74,19 +75,18 @@ class Document
      */
     public function setTypeCode($typeCode)
     {
-        $this->typeCode = (string)$typeCode;
+        $this->typeCode = (string) $typeCode;
+
         return $this;
     }
 
-
     /**
-     * @param Note $note
-     *
      * @return self
      */
     public function addNote(Note $note)
     {
         $this->notes[] = $note;
+
         return $this;
     }
 
@@ -107,8 +107,6 @@ class Document
     }
 
     /**
-     * @param Date $date
-     *
      * @return self
      */
     public function setDate(Date $date)
@@ -117,5 +115,4 @@ class Document
 
         return $this;
     }
-
 }

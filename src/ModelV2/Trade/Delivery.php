@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\ModelV2\Trade;
+<?php
+
+namespace Easybill\ZUGFeRD\ModelV2\Trade;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
@@ -6,7 +8,6 @@ use JMS\Serializer\Annotation\XmlElement;
 
 class Delivery
 {
-
     /**
      * @var TradeParty
      * @Type("Easybill\ZUGFeRD\ModelV2\Trade\TradeParty")
@@ -34,7 +35,6 @@ class Delivery
         $this->chainEvent = new DeliveryChainEvent($date, $format);
     }
 
-
     /**
      * @return \Easybill\ZUGFeRD\ModelV2\Trade\DeliveryChainEvent
      */
@@ -50,6 +50,4 @@ class Delivery
     {
         $this->chainEvent = $chainEvent;
     }
-
-
 }

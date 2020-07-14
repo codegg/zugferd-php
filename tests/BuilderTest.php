@@ -37,7 +37,6 @@ use PHPUnit\Framework\TestCase;
 
 class BuilderTest extends TestCase
 {
-
     /**
      * @before
      */
@@ -63,7 +62,6 @@ class BuilderTest extends TestCase
             Christian Szardenings
             Ronny Keyser', 'REG'));
 
-
         $trade = $doc->getTrade();
 
         $trade->setDelivery(new Delivery('20130305', 102));
@@ -75,11 +73,11 @@ class BuilderTest extends TestCase
         $builder = Builder::create();
         $xml = $builder->getXML($doc);
 
-        #file_put_contents(__DIR__ . '/builder.zugferd.xml', $xml);
-        $expected = new DOMDocument;
-        $expected_xml = file_get_contents(__DIR__ . '/builder.zugferd.xml');
+        //file_put_contents(__DIR__ . '/builder.zugferd.xml', $xml);
+        $expected = new DOMDocument();
+        $expected_xml = file_get_contents(__DIR__.'/builder.zugferd.xml');
         $expected->loadXML($expected_xml);
-        $actual = new DOMDocument;
+        $actual = new DOMDocument();
         $actual->loadXML($xml);
         $this->assertEqualXMLStructure(
             $expected->firstChild, $actual->firstChild
@@ -191,5 +189,4 @@ class BuilderTest extends TestCase
 
         $trade->setSettlement($settlement);
     }
-
 }

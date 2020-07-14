@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\Model;
+<?php
+
+namespace Easybill\ZUGFeRD\Model;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
@@ -12,8 +14,7 @@ class DocumentContext
      * @XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:12")
      * @SerializedName("BusinessProcessSpecifiedDocumentContextParameter")
      */
-
-    private $bp_type;/**
+    private $bp_type; /**
      * @var \Easybill\ZUGFeRD\Model\ContextParameterID
      * @Type("Easybill\ZUGFeRD\Model\ContextParameterID")
      * @XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:12")
@@ -23,6 +24,6 @@ class DocumentContext
 
     public function __construct($type)
     {
-        $this->type = new ContextParameterID('urn:ferd:CrossIndustryDocument:invoice:1p0:' . strtolower($type));
+        $this->type = new ContextParameterID('urn:ferd:CrossIndustryDocument:invoice:1p0:'.strtolower($type));
     }
 }

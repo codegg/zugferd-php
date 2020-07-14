@@ -9,7 +9,6 @@ use JMS\Serializer\SerializerInterface;
 
 class Builder
 {
-
     private $serializer;
 
     public function __construct(SerializerInterface $serializer)
@@ -21,6 +20,7 @@ class Builder
     {
         return $this->serializer->serialize($document, 'xml');
     }
+
     public function getXMLv2(Invoice $document): string
     {
         return $this->serializer->serialize($document, 'xml');
@@ -31,6 +31,7 @@ class Builder
         $serializer = SerializerBuilder::create()
             ->setDebug(true)
             ->build();
+
         return new self($serializer);
     }
 }

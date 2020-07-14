@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\ModelV2\Trade;
+<?php
+
+namespace Easybill\ZUGFeRD\ModelV2\Trade;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
@@ -7,7 +9,6 @@ use JMS\Serializer\Annotation\XmlList;
 
 class Agreement
 {
-
     /**
      * @var string
      * @Type("string")
@@ -45,7 +46,7 @@ class Agreement
      * @Type("array<Easybill\ZUGFeRD\ModelV2\Trade\ReferencedDocument>")
      * @XmlList(inline = true, entry = "AdditionalReferencedDocument", namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
      */
-    private $additionalReferencedDocuments = array();
+    private $additionalReferencedDocuments = [];
     /**
      * @var ProcuringProject
      * @Type("Easybill\ZUGFeRD\ModelV2\Trade\ProcuringProject")
@@ -70,6 +71,7 @@ class Agreement
     public function setBuyerReference($buyerReference)
     {
         $this->buyerReference = $buyerReference;
+
         return $this;
     }
 
@@ -89,6 +91,7 @@ class Agreement
     public function setSeller($seller)
     {
         $this->seller = $seller;
+
         return $this;
     }
 
@@ -108,8 +111,7 @@ class Agreement
     public function setBuyer($buyer)
     {
         $this->buyer = $buyer;
+
         return $this;
     }
-
-
 }

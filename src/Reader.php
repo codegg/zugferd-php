@@ -16,20 +16,18 @@ class Reader
         $this->serializer = $serializer;
     }
 
-    public function getDocument(string $xml,string $standard='zugferd.de.1p0')
+    public function getDocument(string $xml, string $standard = 'zugferd.de.1p0')
     {
-        switch($standard) {
-            case "zugferd.de.1p0":
-            case "invoice:1p0":
+        switch ($standard) {
+            case 'zugferd.de.1p0':
+            case 'invoice:1p0':
                 return $this->serializer->deserialize($xml, Document::class, 'xml');
                 break;
-            case "zugferd.de.2p0":
-            case "factur-x.eu:1p0":
+            case 'zugferd.de.2p0':
+            case 'factur-x.eu:1p0':
                 return $this->serializer->deserialize($xml, Invoice::class, 'xml');
                 break;
-
         }
-
     }
 
     public static function create(): Reader
@@ -37,6 +35,7 @@ class Reader
         $serializer = SerializerBuilder::create()
             ->setDebug(true)
             ->build();
+
         return new self($serializer);
     }
 }

@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\ModelV2\Trade;
+<?php
+
+namespace Easybill\ZUGFeRD\ModelV2\Trade;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
@@ -6,7 +8,6 @@ use JMS\Serializer\Annotation\XmlElement;
 
 class CreditorFinancialInstitution
 {
-
     /**
      * BIC (Bank Cdentifier Code) of a credit institution.
      *
@@ -17,11 +18,9 @@ class CreditorFinancialInstitution
      */
     private $bic;
 
-
     public function __construct($bic)
     {
         $this->bic = $bic;
-
     }
 
     /**
@@ -71,5 +70,4 @@ class CreditorFinancialInstitution
     {
         // deprecated in v2
     }
-
 }

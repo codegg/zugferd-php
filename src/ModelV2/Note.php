@@ -1,11 +1,13 @@
-<?php namespace Easybill\ZUGFeRD\ModelV2;
+<?php
+
+namespace Easybill\ZUGFeRD\ModelV2;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlElement;
 
 /**
- * Class Note
+ * Class Note.
  */
 class Note
 {
@@ -29,14 +31,13 @@ class Note
      * Note constructor.
      *
      * @param             $content
-     * @param null|string $subjectCode
+     * @param string|null $subjectCode
      */
     public function __construct($content, $subjectCode = null)
     {
         $this->setContent($content);
         $this->setSubjectCode($subjectCode);
     }
-
 
     /**
      * @return string
@@ -53,7 +54,8 @@ class Note
      */
     public function setContent($content)
     {
-        $this->content = (string)$content;
+        $this->content = (string) $content;
+
         return $this;
     }
 
@@ -70,18 +72,16 @@ class Note
      */
     public function setSubjectCode($subjectCode)
     {
-        if ($subjectCode !== null &&
+        if (null !== $subjectCode &&
             strlen($subjectCode) > 0 &&
-            $subjectCode !== 'REG' &&
-            $subjectCode !== 'AAK' &&
-            $subjectCode !== 'AAJ' &&
-            $subjectCode !== 'PMT'
+            'REG' !== $subjectCode &&
+            'AAK' !== $subjectCode &&
+            'AAJ' !== $subjectCode &&
+            'PMT' !== $subjectCode
         ) {
             throw new \RuntimeException('Invalid subject code! Please set it to null or to an empty string, REG, AAK, AAJ, PMT or ');
         }
 
         $this->subjectCode = $subjectCode;
-
     }
-
 }

@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\ModelV2\Trade\Item;
+<?php
+
+namespace Easybill\ZUGFeRD\ModelV2\Trade\Item;
 
 use Easybill\ZUGFeRD\ModelV2\Note;
 use JMS\Serializer\Annotation\SerializedName;
@@ -8,7 +10,6 @@ use JMS\Serializer\Annotation\XmlList;
 
 class LineDocument
 {
-
     /**
      * @var string
      * @Type("string")
@@ -22,7 +23,7 @@ class LineDocument
      * @Type("array<Easybill\ZUGFeRD\ModelV2\Note>")
      * @XmlList(inline = true, entry = "IncludedNote", namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100")
      */
-    private $notes = array();
+    private $notes = [];
 
     /**
      * LineDocument constructor.
@@ -50,6 +51,7 @@ class LineDocument
     public function setLineId($lineId)
     {
         $this->lineId = $lineId;
+
         return $this;
     }
 
@@ -62,14 +64,12 @@ class LineDocument
     }
 
     /**
-     * @param \Easybill\ZUGFeRD\ModelV2\Note $note
-     *
      * @return self
      */
     public function addNote(Note $note)
     {
         $this->notes[] = $note;
-        return $this;
-   }
 
+        return $this;
+    }
 }

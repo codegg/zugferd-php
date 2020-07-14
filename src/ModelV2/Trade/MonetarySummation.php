@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\ModelV2\Trade;
+<?php
+
+namespace Easybill\ZUGFeRD\ModelV2\Trade;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
@@ -6,7 +8,6 @@ use JMS\Serializer\Annotation\XmlElement;
 
 class MonetarySummation
 {
-
     /**
      * Total amount of all invoice positions.
      *
@@ -86,19 +87,18 @@ class MonetarySummation
      */
     private $duePayableAmount;
 
-
     /**
      * MonetarySummation constructor.
      *
-     * @param double $lineTotal
-     * @param double $chargeTotal
-     * @param double $allowanceTotal
-     * @param double $taxBasisTotal
-     * @param double $taxTotal
-     * @param double $grandTotal
-     * @param double $duePayableAmount
+     * @param float  $lineTotal
+     * @param float  $chargeTotal
+     * @param float  $allowanceTotal
+     * @param float  $taxBasisTotal
+     * @param float  $taxTotal
+     * @param float  $grandTotal
+     * @param float  $duePayableAmount
      * @param string $currency
-     * @param bool $currency_only_on_tax
+     * @param bool   $currency_only_on_tax
      */
     public function __construct($lineTotal,
                                 $chargeTotal,
@@ -111,7 +111,7 @@ class MonetarySummation
                                 $currency_only_on_tax = true)
     {
         $this->taxTotal = new Amount($taxTotal, $currency);
-        if($currency_only_on_tax) {
+        if ($currency_only_on_tax) {
             $currency = null;
         }
         $this->lineTotal = new Amount($lineTotal, $currency);
@@ -120,7 +120,6 @@ class MonetarySummation
         $this->taxBasisTotal = new Amount($taxBasisTotal, $currency);
         $this->grandTotal = new Amount($grandTotal, $currency);
         $this->duePayableAmount = new Amount($duePayableAmount, $currency);
-
     }
 
     /**
@@ -234,5 +233,4 @@ class MonetarySummation
     {
         $this->duePayableAmount = $duePayableAmount;
     }
-
 }

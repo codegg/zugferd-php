@@ -1,4 +1,6 @@
-<?php namespace Easybill\ZUGFeRD\ModelV2;
+<?php
+
+namespace Easybill\ZUGFeRD\ModelV2;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
@@ -21,7 +23,6 @@ class DocumentContext
      * @SerializedName("GuidelineSpecifiedDocumentContextParameter")
      */
     private $type;
-
 
     public function __construct($type)
     {
