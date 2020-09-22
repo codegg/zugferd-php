@@ -80,6 +80,9 @@ class DateTime
         return $this->time;
     }
 
+    /**
+     * @return \DateTime
+     */
     public function getDateTime()
     {
         return $this->dateTime;

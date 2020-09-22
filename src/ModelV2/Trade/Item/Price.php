@@ -29,10 +29,11 @@ class Price
      * @param float  $value
      * @param string $currency
      * @param bool   $isSum
+     * @param int    $decimals
      */
-    public function __construct($value, $currency = 'EUR', $isSum = true)
+    public function __construct($value, $currency = 'EUR', $isSum = true, $decimals = null)
     {
-        $this->amount = new Amount($value, $currency, $isSum);
+        $this->amount = new Amount($value, $currency, $isSum, $decimals);
     }
 
     /**
